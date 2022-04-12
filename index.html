@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--META-->
+    <meta charset="utf-8">
+    <meta name="description" content="This webapp helps randomize phisical playing cards with stack shuffing">
+    <meta name="keywords" content="MTG,Yugioh,Pokemon,Poker,card,shuffle,random">
+    <meta name="author" content="Brandon Weigand">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="public">
+    <meta name="copyright" content="./LICENSE">
+    
+    <link rel="canonical" href="https://brandonweigand.github.io/BrandonWeigand/" />
+    <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
+
+
+    <title>Deck Randomizer</title>
+    <!--PRELOAD-->
+    <link rel="preload" href="./script.js" as="script">
+    <link rel="preload" href="./style.css" as="style">
+    
+    <!--ICONS-->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="./style.css">
+
+    <!--SCRIPTS-HEADER-->
+    
+</head>
+<body onload='step(Date.now());'>
+    <header>
+        
+    </header>
+    <div id="CONTENT">      
+        <div id="DESCRIPTION">
+            <!-- 
+                This section is needed for SEO :'( 
+                DESCRIPTION MUST
+                    1: contain the meta key words
+                    2: be human readable
+            -->
+            <h1>Deck Randomizer<!--Always document title--></h1>
+            <span>
+                <!--always match meta description-->
+                This webapp helps randomize phisical playing cards with stack shuffing.
+            </span>
+        </div>
+        <article id="page-main" class="page">
+            <h2>Deck Randomizer</h2>
+                <svg id='card_layout' viewBox="0 0 864 864">
+                <path id="p1" fill="#FF0000" stroke="#29ABE2" stroke-width="6" stroke-miterlimit="10" d="M818.221,767.056
+                    c0,8.482-6.866,15.359-15.335,15.359H603.524c-8.47,0-15.336-6.877-15.336-15.359V475.237c0-8.48,6.866-15.358,15.336-15.358
+                    h199.361c8.469,0,15.335,6.878,15.335,15.358V767.056z"/>
+                <path id="p2" fill="#FF0000" stroke="#29ABE2" stroke-width="6" stroke-miterlimit="10" d="M546.016,767.056
+                    c0,8.482-6.866,15.359-15.335,15.359H331.32c-8.47,0-15.336-6.877-15.336-15.359V475.237c0-8.48,6.866-15.358,15.336-15.358h199.361
+                    c8.469,0,15.335,6.878,15.335,15.358V767.056z"/>
+                <path id="p3" fill="#FF0000" stroke="#29ABE2" stroke-width="6" stroke-miterlimit="10" d="M273.812,767.056
+                    c0,8.482-6.867,15.359-15.335,15.359H59.115c-8.47,0-15.335-6.877-15.335-15.359V475.237c0-8.48,6.866-15.358,15.335-15.358h199.362
+                    c8.468,0,15.335,6.878,15.335,15.358V767.056z"/>
+                <path id="p4" fill="#FF0000" stroke="#29ABE2" stroke-width="6" stroke-miterlimit="10" d="M818.221,403.762
+                    c0,8.482-6.866,15.359-15.335,15.359H603.524c-8.47,0-15.336-6.877-15.336-15.359V111.944c0-8.482,6.866-15.359,15.336-15.359
+                    h199.361c8.469,0,15.335,6.877,15.335,15.359V403.762z"/>
+                <path id="p5" fill="#FF0000" stroke="#29ABE2" stroke-width="6" stroke-miterlimit="10" d="M546.016,403.762
+                    c0,8.482-6.866,15.359-15.335,15.359H331.32c-8.47,0-15.336-6.877-15.336-15.359V111.944c0-8.482,6.866-15.359,15.336-15.359
+                    h199.361c8.469,0,15.335,6.877,15.335,15.359V403.762z"/>
+                <path id="p6" fill="#FF0000" stroke="#29ABE2" stroke-width="6" stroke-miterlimit="10" d="M273.812,403.762
+                    c0,8.482-6.866,15.359-15.335,15.359H59.115c-8.47,0-15.335-6.877-15.335-15.359V111.944c0-8.482,6.866-15.359,15.335-15.359
+                    h199.362c8.469,0,15.335,6.877,15.335,15.359V403.762z"/>
+                </svg>
+                <input type="button" id="btn_pause" value="▶️">
+                <input type="range" id="que_range">
+                <span class="halph"><label for="deck_max">Number of Cards: </label><input type="number" id="deck_max" placeholder="Number of cards: "></span>
+                <span class="halph"><label for="deck_max">Time to deal 1 card: </label><input type="number" id="deal_time" placeholder="Time to deal 1 card: " step="0.1"></span>
+        </article>
+        <article id="page-instructions" class="page">
+            <h2>Instructions</h2>
+            <p>This is a deck shuffiling helper. The program randomly chooses the next pile for you to put your card in.</p>
+            <p>Deal the cards with your domanate hand while holding the remander of the cards on your other hand.</p>
+            <p>You must set a time it takes to deal and number of cards in the deck to above zero before you can begin.</p>
+            <p>The sliding bar represents how long you have before you need to deal the next card</p>
+            <p>There is a feint after trail to remind you of the previous area that was dealt to.</p>
+            <p>Pause and Play to opperate</p>
+        </article>
+    </div>
+    <footer>
+        <nav>
+            <!--External LINKS-->
+            <ul id="links-external">
+                <li><a id="link-github-sponsor" target="_blank" href="https://github.com/sponsors/BrandonWeigand">Github Sponsor</a></li>
+                <li><a id="link-github-profile" target="_blank" href="https://github.com/BrandonWeigand" >Github Profile</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <!--SCRIPTS-FOOTER-->
+    <script src="./script.js"></script>
+</body>
+</html>
